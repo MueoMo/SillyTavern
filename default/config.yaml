@@ -2,16 +2,20 @@
 # Listen for incoming connections
 listen: true
 # Server port
-port: 8000
+# 更改端口减少被扫
+port: 8090
 # Toggle whitelist mode
-whitelistMode: true
+# 云酒馆关闭白名单
+whitelistMode: false
 # Whitelist of allowed IP addresses
 whitelist:
   - 127.0.0.1
 # Toggle basic authentication for endpoints
-basicAuthMode: false
+# 云酒馆最好开启密码
+basicAuthMode: true
 # Basic authentication credentials
 basicAuthUser:
+# 此处密码不生效，请在环境变量处修改
   username: user
   password: password
 # Enables CORS proxy middleware

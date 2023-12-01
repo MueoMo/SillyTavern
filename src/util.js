@@ -15,6 +15,9 @@ function getConfig() {
     function getNewConfig() {
         try {
             const config = yaml.parse(fs.readFileSync(path.join(process.cwd(), './config.yaml'), 'utf8'));
+            // 强制使用环境变量为密码，防止环境变量不生效
+            config.basicAuthUser.username = process.env.username;
+            config.basicAuthUser.password = process.env.password;
             return config;
         } catch (error) {
             console.warn('Failed to read config.yaml');
